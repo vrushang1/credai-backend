@@ -1,0 +1,28 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type HealthFormType {
+  id: ID!
+  businessUEN: Int!
+  businessName: String!
+  name: String!
+  phone: String
+  email: String!
+}
+
+type Query {
+  healthform: [HealthFormType!]!
+}
+
+type Mutation {
+  createHealthForm(input: HealthFormInput!): HealthFormType!
+}
+
+input HealthFormInput {
+  businessUEN: Int!
+  businessName: String!
+  name: String!
+  phone: String!
+  email: String!
+}
