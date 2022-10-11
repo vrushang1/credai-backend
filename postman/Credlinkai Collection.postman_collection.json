@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "dc2343ae-4b3b-4b1c-a38a-46bf1b8cd574",
+		"name": "Credlinkai Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Health Form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "operations",
+							"value": "{ \"query\": \"mutation ($file: [Upload!]!) { createHealthForm(file: $file, input: {businessUEN:\\\"123\\\", businessName:\\\"Hello\\\", email:\\\"Hello\\\", name:\\\"Hello\\\", phone:\\\"Hello\\\"}){businessName businessUEN name email phone attachments} }\", \"variables\": { \"file\": [null,null] } }",
+							"type": "default"
+						},
+						{
+							"key": "map",
+							"value": "{ \"0\": [\"variables.file.0\"], \"1\": [\"variables.file.1\"] }",
+							"type": "default"
+						},
+						{
+							"key": "0",
+							"type": "file",
+							"src": "/C:/Users/vrush/Desktop/ecommerce-schema-diagram.png"
+						},
+						{
+							"key": "1",
+							"type": "file",
+							"src": "/C:/Users/vrush/Desktop/c0d9f237-03e2-42cd-8439-e0b0bc3e7a5c.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Health Forms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  healthform{\r\n    id\r\n    businessUEN\r\n    businessName\r\n    name\r\n    email\r\n    phone\r\n    attachments\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Health Form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n  updateForm(id: \"6344e5af2918f4a787e5d355\", input: {businessUEN:\"789Y\", businessName:\"Check\", name: \"Hey\", phone: \"78946513\", email: \"test@gmail.com\"}){\r\n    id\r\n    businessUEN\r\n    businessName\r\n    name\r\n    email\r\n    phone\r\n    attachments\r\n  }\r\n}\r\n\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Health Form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n  deleteForm(id: \"6344e6302918f4a787e5d357\"){\r\n    id\r\n    businessUEN\r\n    businessName\r\n    name\r\n    email\r\n    phone\r\n    attachments\r\n  }\r\n}\r\n\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

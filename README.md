@@ -33,7 +33,7 @@ $ npm install
 }
 ```
 
-- I have also provided postman collection export which is in **postman** directory, you can export it and submit the form manually.
+- I have also provided postman collection export which is in **/postman** directory, you can export it and submit the form manually.
 
 ### File System Storage
 
