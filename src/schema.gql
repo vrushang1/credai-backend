@@ -9,6 +9,7 @@ type HealthFormType {
   name: String!
   phone: String
   email: String!
+  attachments: [String!]!
 }
 
 type Query {
@@ -16,7 +17,7 @@ type Query {
 }
 
 type Mutation {
-  createHealthForm(input: HealthFormInput!): HealthFormType!
+  createHealthForm(input: HealthFormInput!, file: [Upload!]!): HealthFormType!
 }
 
 input HealthFormInput {
@@ -26,3 +27,6 @@ input HealthFormInput {
   phone: String!
   email: String!
 }
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload

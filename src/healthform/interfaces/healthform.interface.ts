@@ -6,4 +6,5 @@ export interface HealthFormInterface extends Document {
   readonly name: string;
   readonly phone: string;
   readonly email: string;
+  readonly attachments: Array<string>;
 }

@@ -29,4 +29,7 @@ export class HealthFormType {
   @IsEmail()
   @IsNotEmpty()
   email: string;
+
+  @Field((type) => [String])
+  attachments: string[];
 }

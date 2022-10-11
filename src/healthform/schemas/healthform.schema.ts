@@ -19,4 +19,7 @@ export const HealthFormSchema = new Mongoose.Schema({
   email: {
     type: String,
   },
+  attachments: {
+    type: [],
+  },
 });
