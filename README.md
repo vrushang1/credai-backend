@@ -11,6 +11,11 @@
 $ npm install
 ```
 
+### Env Configuration
+
+- you have to add mongo url to the .env file named `MONGO_URI`
+- you can check .env.example for sample
+
 ### Database setup steps
 
 - Create database in MongoDB `credlinkai`
