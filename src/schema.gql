@@ -4,7 +4,7 @@
 
 type HealthFormType {
   id: ID!
-  businessUEN: Int!
+  businessUEN: String!
   businessName: String!
   name: String!
   phone: String
@@ -21,7 +21,7 @@ type Mutation {
 }
 
 input HealthFormInput {
-  businessUEN: Int!
+  businessUEN: String!
   businessName: String!
   name: String!
   phone: String!

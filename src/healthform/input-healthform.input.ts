@@ -3,8 +3,8 @@ import { GraphQLUpload, FileUpload } from 'graphql-upload';
 
 @InputType()
 export class HealthFormInput {
-  @Field(() => Int)
-  readonly businessUEN: number;
+  @Field()
+  readonly businessUEN: string;
 
   @Field()
   readonly businessName: string;
