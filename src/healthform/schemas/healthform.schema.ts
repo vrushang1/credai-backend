@@ -1,11 +1,8 @@
 import * as Mongoose from 'mongoose';
 
 export const HealthFormSchema = new Mongoose.Schema({
-  id: {
-    type: Number,
-  },
   businessUEN: {
-    type: Number,
+    type: String,
   },
   businessName: {
     type: String,
@@ -18,5 +15,8 @@ export const HealthFormSchema = new Mongoose.Schema({
   },
   email: {
     type: String,
+  },
+  attachments: {
+    type: [],
   },
 });

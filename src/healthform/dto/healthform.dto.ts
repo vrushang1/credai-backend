@@ -6,10 +6,10 @@ export class HealthFormType {
   @IsString()
   id?: string;
 
-  @Field(() => Int)
-  @IsNumber()
+  @Field()
+  @IsString()
   @IsNotEmpty()
-  businessUEN: number;
+  businessUEN: string;
 
   @Field()
   @IsString()
@@ -29,4 +29,7 @@ export class HealthFormType {
   @IsEmail()
   @IsNotEmpty()
   email: string;
+
+  @Field((type) => [String])
+  attachments: string[];
 }

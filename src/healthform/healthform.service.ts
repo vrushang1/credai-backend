@@ -16,9 +16,28 @@ export class HealthformService {
     return await this.healthFormModel.find();
   }
 
-  async create(createHealthForm: HealthFormInput): Promise<HealthFormType> {
-    const createdForm = new this.healthFormModel(createHealthForm);
+  async create(
+    createHealthForm: HealthFormInput,
+    files: string[],
+  ): Promise<HealthFormType> {
+    const createdForm = new this.healthFormModel({
+      ...createHealthForm,
+      attachments: files,
+    });
 
     return await createdForm.save();
+  }
+
+  async update(
+    id: string,
+    updateHealthForm: HealthFormInput,
+  ): Promise<HealthFormType> {
+    return await this.healthFormModel.findByIdAndUpdate(id, updateHealthForm, {
+      new: true,
+    });
+  }
+
+  async delete(id: string): Promise<HealthFormType> {
+    return await this.healthFormModel.findByIdAndRemove(id);
   }
 }
