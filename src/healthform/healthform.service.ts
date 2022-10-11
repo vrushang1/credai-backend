@@ -27,4 +27,17 @@ export class HealthformService {
 
     return await createdForm.save();
   }
+
+  async update(
+    id: string,
+    updateHealthForm: HealthFormInput,
+  ): Promise<HealthFormType> {
+    return await this.healthFormModel.findByIdAndUpdate(id, updateHealthForm, {
+      new: true,
+    });
+  }
+
+  async delete(id: string): Promise<HealthFormType> {
+    return await this.healthFormModel.findByIdAndRemove(id);
+  }
 }

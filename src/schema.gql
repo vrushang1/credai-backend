@@ -18,6 +18,8 @@ type Query {
 
 type Mutation {
   createHealthForm(input: HealthFormInput!, file: [Upload!]!): HealthFormType!
+  updateForm(id: String!, input: HealthFormInput!): HealthFormType!
+  deleteForm(id: String!): HealthFormType!
 }
 
 input HealthFormInput {

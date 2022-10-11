@@ -55,4 +55,17 @@ export class HealthformResolver {
     );
     return this.healthService.create(input, uploadedFiles);
   }
+
+  @Mutation((returns) => HealthFormType)
+  async updateForm(
+    @Args('id') id: string,
+    @Args('input') input: HealthFormInput,
+  ): Promise<HealthFormType> {
+    return this.healthService.update(id, input);
+  }
+
+  @Mutation((returns) => HealthFormType)
+  async deleteForm(@Args('id') id: string): Promise<HealthFormType> {
+    return this.healthService.delete(id);
+  }
 }
